@@ -20,7 +20,7 @@ from AplicacionCiclo3 import views
 from AplicacionCiclo3.views.productoView import producto_api_view, producto_detail_view
 from AplicacionCiclo3.views.proveedorView import proveedores_api_view, proveedores_detail_view
 from AplicacionCiclo3.views.registro_ventasView import registro_ventas_api_view, registro_ventas_detail_view
-from AplicacionCiclo3.views.comentariosView import comentarios_api_view
+from AplicacionCiclo3.views.comentariosView import comentarios_api_view#, comentarios_detail_view
 
 from AplicacionCiclo3.views.clienteView import cliente_api_view, cliente_detail_view
 
@@ -36,8 +36,8 @@ urlpatterns = [
     path('proveedores/<int:pk>',views.proveedores_detail_view),
     path('registro_ventas/',views.registro_ventas_api_view, name='RegistroVentas'),
     path('registro_ventas/<int:pk>',views.registro_ventas_detail_view),
-    path('comentarios/<int:pk>',views.comentarios_api_view, name='Comentarios'),
-
+    path('comentarios/',views.comentarios_api_view, name='Comentarios'),
+    path('comentarios/<int:pk>',views.comentarios_detail_view),
     path('cliente/', views.cliente_api_view),
-    path('ciente/<int:pk>', views.cliente_detail_view),
+    path('cliente/<int:pk>', views.cliente_detail_view),
 ]

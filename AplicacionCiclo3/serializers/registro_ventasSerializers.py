@@ -3,4 +3,4 @@ from rest_framework import serializers
 class RegistroVentasSerializers(serializers.ModelSerializer):
  class Meta:
     model = RegistroVentas
-    fields = [ 'id', 'fecha_venta']
+    fields = [ 'id','idAdministrador','idCliente', 'fecha_venta']

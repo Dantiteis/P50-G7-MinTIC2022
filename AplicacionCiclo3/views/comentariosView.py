@@ -21,11 +21,11 @@ def comentarios_api_view(request):
                 return Response( comentarios_serializer.data)
             return Response( comentarios_serializer.errors)
 
-'''Metodo para leer registro de ventas'''
+'''Metodo para leer Comentarios'''
 @api_view(['GET'])
 def comentarios_detail_view(request,pk=None):
 
     if request.method == 'GET':
         comentarios = Comentarios.objects.filter(id = pk).first()
         comentarios_serializer = ComentariosSerializers(comentarios)
-        return Response(comentarios_serializer.data) 
+        return Response(comentarios_serializer.data)

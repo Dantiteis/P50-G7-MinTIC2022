@@ -7,3 +7,6 @@ from .proveedorView import proveedores_detail_view
 from .registro_ventasView import registro_ventas_api_view
 from .registro_ventasView import registro_ventas_detail_view
 from .comentariosView import comentarios_api_view
+from .comentariosView import comentarios_detail_view
+from .clienteView import cliente_api_view
+from .clienteView import cliente_detail_view
