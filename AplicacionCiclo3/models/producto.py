@@ -9,7 +9,6 @@ class Producto(models.Model):
     salidas = models.CharField(max_length=30)
     pantalla_tamaño = models.CharField(max_length=30)
     pantalla_resolucion = models.CharField(max_length=30)
-    pantalla_tamaño = models.CharField(max_length=30)
     bateria = models.CharField(max_length=30)
     software_incluido = models.BooleanField(default=False)
     tipo_disco = models.CharField(max_length=30)

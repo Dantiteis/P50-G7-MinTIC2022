@@ -37,7 +37,7 @@ urlpatterns = [
     path('registro_ventas/',views.registro_ventas_api_view, name='RegistroVentas'),
     path('registro_ventas/<int:pk>',views.registro_ventas_detail_view),
     path('comentarios/',views.comentarios_api_view, name='Comentarios'),
-    path('comentarios/<int:pk>',views.comentarios_detail_view),
+    path('comentario/<int:pk>',views.comentarios_detail_view),
     path('cliente/', views.cliente_api_view),
     path('cliente/<int:pk>', views.cliente_detail_view),
 ]
