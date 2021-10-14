@@ -29,7 +29,7 @@ def producto_detail_view(request,pk=None):
         return Response(producto_serializer.data)    
     elif request.method == 'PUT':
         producto = Producto.objects.filter(id = pk).first()
-        producto_serializer = ProductoSerializers(data = request.data)
+        producto_serializer = ProductoSerializers(instance = producto, data = request.data)
         if producto_serializer.is_valid():
             producto_serializer.save()
             return Response(producto_serializer.data)
