@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'AplicacionCiclo3',
+    'corsheaders',
 ]
 
 SIMPLE_JWT={
