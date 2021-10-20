@@ -66,12 +66,13 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK={
-'DEFAULT_PERMISSION_CLASSES':(
-'rest_framework.permissions.AllowAny',
-),
-'DEFAULT_AUTHENTICATION_CLASSES':(
-'rest_framework_simplejwt.authentication.JWTAuthentication',
-)
+    'DEFAULT_PERMISSION_CLASSES':(
+    'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT':'json'
 }
 
 AUTH_USER_MODEL = 'AplicacionCiclo3.User'
@@ -108,6 +109,7 @@ DATABASES = {
         'PASSWORD': 'a194b04f166ebc3d0b47fbccd46c0da3206d4e9e0d730a91a8baaa606ab7974d',
         'HOST': 'ec2-34-203-91-150.compute-1.amazonaws.com',
         'PORT': '5432',
+        'TEST':{'MIRROR':'default',},
     }
 }
 

@@ -3,7 +3,27 @@
 
     <div class="header">
 
-      <h1> Tienda de Computadores </h1>
+      <!--<h1> Tienda de Computadores </h1>-->
+      <ul class="menu">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Agregar productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Proveedores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PQRS</a>
+        </li>
+      </ul>
       <nav>
         <button v-if="is_auth" v-on:click="loadHome"> Inicio </button>
         <button v-if="is_auth" v-on:click="loadAccount"> Cuenta </button>
@@ -111,6 +131,19 @@ export default {
   body{
     margin: 0 0 0 0;
   }
+
+  .menu li{
+    display: inline-block;
+    text-align: center;
+  }
+
+  .menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+
+}
 
   .header{
     margin: 0%;
