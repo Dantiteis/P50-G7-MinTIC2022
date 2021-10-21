@@ -55,8 +55,7 @@
 <script>
 
 export default {
-    name: "Home",
-
+    name: "RegistroVentas",
     data: function(){
         return {
             username: localStorage.getItem('username') || "none"

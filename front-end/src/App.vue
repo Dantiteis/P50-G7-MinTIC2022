@@ -21,7 +21,7 @@
           <a class="nav-link" href="#">Proveedores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">PQRS</a>
+          <a class="nav-link" v-if="is_auth" v-on:click="loadRV">Registro de Ventas</a>
         </li>
       </ul>
       <nav>
@@ -111,6 +111,9 @@ export default {
 			alert("Sesión Cerrada");
 			this.verifyAuth();
 		},
+    loadRV: function() {
+      this.$router.push({ name: "registroVentas" });
+    },
 
   },
 
@@ -143,7 +146,10 @@ export default {
     padding: 20px;
     display: block;
 
-}
+  }
+  .menu li a:hover{
+    background: #ef8354;
+  }
 
   .header{
     margin: 0%;
@@ -152,7 +158,7 @@ export default {
     height: 10vh; 
     min-height: 100px;
 
-    background-color: #283747 ;
+    background-color: #092327 ; /* Color reemplazado y otros de la misma tonalidad*/
     color:#E5E7E9  ;
 
     display: flex;
@@ -178,7 +184,7 @@ export default {
 
   .header nav button{
     color: #E5E7E9;
-    background: #283747;
+    background: #092327;
     border: 1px solid #E5E7E9;
 
     border-radius: 5px;
@@ -186,7 +192,7 @@ export default {
   }
 
   .header nav button:hover{
-    color: #283747;
+    color: #092327;
     background: #E5E7E9;
     border: 1px solid #E5E7E9;
   }
@@ -208,7 +214,7 @@ export default {
     height: 10vh;
     min-height: 100px; 
 
-    background-color: #283747;
+    background-color: #092327;
     color: #E5E7E9;
 
   }
