@@ -22,7 +22,7 @@
           <a class="nav-link" href="#">Proveedores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">PQRS</a>
+          <a class="nav-link" v-if="!is_auth" v-on:click="loadRV">Registro de Ventas</a>
         </li>
       </ul>
       <nav>
@@ -95,6 +95,9 @@ export default {
 			alert("Sesión Cerrada");
 			this.verifyAuth();
 		},
+    loadRV: function() {
+      this.$router.push({ name: "registroVentas" });
+    }
   },
   created: function(){
     this.verifyAuth()
