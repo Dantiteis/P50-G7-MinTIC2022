@@ -1,20 +1,22 @@
 <template>
-
-    <div class="logIn_user">
-        <div class="container_logIn_user">
-            <h2>Iniciar sesión</h2>
-
-            <form v-on:submit.prevent="processLogInUser" >
-                <input type="text" v-model="user.username" placeholder="Username">
-                <br>
-                <input type="password" v-model="user.password" placeholder="Password">
-                <br>
-                <button class="btn btn-block text-center">Iniciar sesión</button>
-            </form>
+<div class="wrapper2">
+    <h1 class="login text-center">Iniciar Sesión</h1>
+    <form class="pt-3" v-on:submit.prevent="processLogInUser" >
+        <div class="form-group">
+            <div class="input-field"> 
+                <span class="fas fa-user p-2"></span> 
+                <input type="text" v-model="user.username" placeholder="Username" required>
+            </div>
         </div>
-
-    </div>
-
+        <div class="form-group">
+            <div class="input-field"> 
+                <span class="fas fa-lock p-2"></span> 
+                <input type="password" v-model="user.password" placeholder="Password" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-block text-center">Iniciar sesión</button>
+    </form>
+</div>
 </template>
 
 
@@ -68,68 +70,74 @@ export default {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-    .logIn_user{
-        margin: 0;
-        padding: 0%;
-        height: 100%;
-        width: 100%;
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.wrapper2 {
+  font-family:'Hind', sans-serif;
+  max-width: 700px;
+  border-radius: 10px;
+  margin: auto !important;
+  margin-top: 80px !important;
+  padding: 30px 40px;
+  border: 3px solid #05021f;
+}
 
-    .container_logIn_user {
-        border: 3px solid  #283747;
-        border-radius: 10px;
-        width: 25%;
-        height: 60%;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.input-field{
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #05021f;
+  font-size: 17px;
+  background: #F5F5F5;
+  border: 1px solid #05021f;
+}
 
-    .logIn_user h2{
-        color: #283747;
+.input-field:hover {
+      color: #7E91C0;
+      font-size: 17px;
+      border: 1px solid #7E91C0	
+  }
 
-    }
+  input {
 
-    .logIn_user form{
-        width: 70%;
-        
-    }
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 0px 2px;
+    background: #F5F5F5;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif
+}
 
-    .logIn_user input{
-        height: 40px;
-        width: 100%;
+.btn.btn-block {
+  width: auto;
+  margin-top: 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #05021f;
+  color: #fff;
+  font-size: 20px;
+}
 
-        box-sizing: border-box;
-        padding: 10px 20px;
-        margin: 5px 0;
-
-        border: 1px solid #283747;
-    }
-
-    .logIn_user button{
-        width: 100%;
-        height: 40px;
-
-        color: #E5E7E9;
-        background: #283747;
-        border: 1px solid #E5E7E9;
-
-        border-radius: 5px;
-        padding: 10px 25px;
-        margin: 5px 0;
-    }
-
-    .logIn_user button:hover{
-        color: #E5E7E9;
-        background: crimson;
-        border: 1px solid #283747;
-    }
+  .btn.btn-block:hover {
+      background-color: #7E91C0;
+  }
+     
+.login{
+  color: #05021f;
+  text-align: center;
+  font-size: 45px !important;
+  font-family: 'Anton', sans-serif;
+}
 
 </style>
