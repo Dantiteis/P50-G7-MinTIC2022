@@ -1,48 +1,62 @@
 <template>
-<div id="app" class="app">
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <router-link to="/" class="navbar-brand">Tienda Computadores</router-link>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav me-auto mb-2 mb-lg-0">
-          <router-link to="/" class="nav-item nav-link">Inicio</router-link>
-          <router-link to="/" class="nav-item nav-link">Productos</router-link>
-          <router-link to="/" class="nav-item nav-link">Agregar productos</router-link>
-          <router-link to="/" class="nav-item nav-link">Proveedores</router-link>
-        </div>
-        <div class="navbar-nav ml-auto">
-          <router-link to="/user/logIn" class="nav-item nav-link">Iniciar sesión</router-link>
-        </div>
-      </div>
+  <div id="app" class="app">
+
+    <div class="header">
+
+      <h1> Tienda de Computadores </h1>
+      <!--<h1> Tienda de Computadores </h1>-->
+      <ul class="menu">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Agregar productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Proveedores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PQRS</a>
+        </li>
+      </ul>
+      <nav>
+        <button v-if="is_auth" v-on:click="loadHome"> Inicio </button>
+        <button v-if="is_auth" v-on:click="loadAccount"> Cuenta </button>
+        <button v-if="is_auth" v-on:click="logOut"> Cerrar Sesión </button>
+        <button v-if="!is_auth" v-on:click="loadLogIn" > Iniciar Sesión </button>
+        <button v-if="!is_auth" v-on:click="loadSignUp" > Registrarse </button>
+      </nav>
     </div>
-  </nav>
-</header>
-
-<footer class="footer">
-      <div class="container">
-        <h2 class="text-center">Grupo 7 - P50</h2>
-      </div>
-    </footer>
-</div>
+    
+    <div class="main-component">
+      <router-view  
+        v-on:completedLogIn="completedLogIn"
+        v-on:completedSignUp="completedSignUp"
+      >
+      </router-view>
+    </div>
+    
+    <div class="footer">
+      <h2>Grupo 7 - P50</h2>
+    </div>
+  </div>
 </template>
-
 <script>
 export default {
   name: 'App',
-
   data: function(){
       return{
         is_auth: false
       }
   },
-
   components: {
   },
-
   methods:{
     verifyAuth: function() {
       this.is_auth = localStorage.getItem("isAuth") || false;
@@ -52,15 +66,12 @@ export default {
       else
         this.$router.push({ name: "home" });
     },
-
     loadLogIn: function(){
       this.$router.push({name: "logIn"})
     },
-
     loadSignUp: function(){
       this.$router.push({name: "signUp"})
     },
-
     completedLogIn: function(data) {
       localStorage.setItem("isAuth", true);
       localStorage.setItem("username", data.username);
@@ -69,8 +80,6 @@ export default {
       alert("Autenticación Exitosa");
       this.verifyAuth();
     },
-
-
     completedSignUp: function(data) {
 			alert("Registro Exitoso");
 			this.completedLogIn(data);
@@ -78,69 +87,93 @@ export default {
     loadHome: function() {
       this.$router.push({ name: "home" });
     },
-
     loadAccount: function () {
 			this.$router.push({ name: "account" });
 		},
-
     logOut: function () {
 			localStorage.clear();
 			alert("Sesión Cerrada");
 			this.verifyAuth();
 		},
-
   },
-
   created: function(){
     this.verifyAuth()
   }
-
 }
 </script>
-
-
-
-
-
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,700;1,300&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  body{
+    margin: 0 0 0 0;
+  }
+  .menu li{
+    display: inline-block;
+    text-align: center;
+  }
+  .menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
 }
-
-body {
-  background: #F5F5F5;
-  height: 100vh;
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-.navbar{
-  width: 100%;
-  margin-bottom: 30px;
-  font-size: 20px;
-  background: #05021f;
-}
-.navbar-brand{
-  font-size: 25px;
-}
- 
-  .footer {
-    position: absolute;
-    bottom: 0;
+  .header{
+    margin: 0%;
+    padding: 0;
     width: 100%;
+    height: 10vh; 
+    min-height: 100px;
+    background-color: #283747 ;
+    color:#E5E7E9  ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h1{
+    width: 20%;
+    text-align: center;
+  }
+  .header nav {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+  }
+  .header nav button{
+    color: #E5E7E9;
+    background: #283747;
+    border: 1px solid #E5E7E9;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  .header nav button:hover{
+    color: #283747;
+    background: #E5E7E9;
+    border: 1px solid #E5E7E9;
+  }
+  
+  .main-component{
+    height: 75vh;
+    margin: 0%;
+    padding: 0%;
+    background: #FDFEFE ;
+  }
+ 
+  .footer{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 10vh;
+    min-height: 100px; 
+    background-color: #283747;
+    color: #E5E7E9;
+  }
+  .footer h2{
+    width: 100%;
+    height: 100%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto !important;
-    background-color: #090622;
-}
-
-.footer h2{
-  color: #fff;
-  font-size: 30px;
   }
 </style>
