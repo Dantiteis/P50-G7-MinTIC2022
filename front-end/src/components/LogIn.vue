@@ -79,7 +79,7 @@ export default {
   max-width: 700px;
   border-radius: 10px;
   margin: auto !important;
-  margin-top: 80px !important;
+  margin-top: 100px !important;
   padding: 30px 40px;
   border: 3px solid #05021f;
 }
@@ -117,12 +117,12 @@ export default {
 
 .btn.btn-block {
   width: auto;
-  margin-top: 10px;
   margin-left: 50%;
   transform: translateX(-50%);
   flex-direction: column;
   display: flex;
   justify-content: center;
+  margin-bottom: 5px;
   border-radius: 20px;
   background-color: #05021f;
   color: #fff;

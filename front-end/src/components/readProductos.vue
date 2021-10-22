@@ -1,10 +1,5 @@
 <template>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"
-  />
+<div>
   <b-table
     :sort-by="sortBy"
     :sort-desc="sortDesc"
@@ -60,6 +55,7 @@
     <button class="btn-lg btn-block" v-on:click="loadProduct" type="button">
       Detalle
     </button>
+  </div>
   </div>
 </template>
 

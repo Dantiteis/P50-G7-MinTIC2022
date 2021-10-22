@@ -8,6 +8,8 @@ import RegistroVentas from './components/RegistroVentas.vue'
 import Productos from "./components/Productos.vue";
 import readProductos from "./components/readProductos";
 import rudProducto from "./components/rudProducto";
+
+import RegistroClientes from './components/registroClientes'
  
  
 const routes = [{
@@ -52,6 +54,11 @@ const routes = [{
         name: "rudProducto",
         component: rudProducto,
       },
+      {
+        path: '/user/addClientes',
+        name: "registroClientes",
+        component: RegistroClientes
+    }
 ];
  
 const router = createRouter({

@@ -101,6 +101,7 @@ export default {
   max-width: 700px;
   border-radius: 10px;
   margin: auto !important;
+  margin-top: 70px !important;
   padding: 7px 30px; 
   border: 3px solid #05021f;
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark ">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
         <div class="container">
           <a class="navbar-brand" href="#">Tienda Computadores</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,13 +13,13 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" v-on:click="Product">Productos</a>
+                <a class="nav-link" >Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Clientes</a>
+                <a class="nav-link" v-if="is_auth" @click="loadCliente">Clientes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Agregar productos</a>
+                <a class="nav-link" v-on:click="Product">Agregar productos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Proveedores</a>
@@ -113,6 +113,9 @@ export default {
      Product: function() {
       this.$router.push({ name: "producto" });
     },
+    loadCliente: function(){
+      this.$router.push({name: "registroClientes"})
+    },
   },
   created: function(){
     this.verifyAuth()
@@ -126,12 +129,6 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-body {
-  background: #F5F5F5;
-  height: 100vh;
-  font-family: 'Open Sans Condensed', sans-serif;
 }
   
   .navbar{
@@ -152,16 +149,14 @@ body {
   }
  
   .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto !important;
-    background-color: #05021f;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #05021f;
+   color: white;
+   text-align: center;
 }
-
 .footer h2{
   color: #fff;
   font-size: 30px;
