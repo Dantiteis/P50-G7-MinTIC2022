@@ -13,7 +13,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" v-on:click="Product">Productos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Clientes</a>
@@ -34,6 +34,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" v-if="!is_auth" @click="loadSignUp">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" v-if="is_auth" @click="logOut">Cerrar Sesión</a>
               </li>
             </ul>
           </div>
@@ -106,6 +109,9 @@ export default {
 		},
     loadRV: function() {
       this.$router.push({ name: "registroVentas" });
+    },
+     Product: function() {
+      this.$router.push({ name: "producto" });
     },
   },
   created: function(){

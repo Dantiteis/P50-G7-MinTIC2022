@@ -1,22 +1,31 @@
 <template>
     <div class="wrapper2">
-        <h1 class="login text-center">Iniciar Sesión</h1>
-        <form class="pt-3" v-on:submit.prevent="processLogInUser" >
-            <div class="form-group">
-                <div class="input-field"> 
-                    <span class="fas fa-user p-2"></span> 
-                    <input type="text" v-model="user.username" placeholder="Username" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-field"> 
-                    <span class="fas fa-lock p-2"></span> 
-                    <input type="password" v-model="user.password" placeholder="Password" required>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-block text-center">Iniciar sesión</button>
-        </form>
-</div>
+                    <h1 class="login text-center">Registro de Venta</h1>
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Nombre del cliente</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ingrese el id del cliente">
+                          <small id="emailHelp" class="form-text text-muted">nombre sin rellenar</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Nombre del producto</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ingrese el id del producto">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Cantidad</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="ingrese la cantidad">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">fecha</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="ingrese el Producto">
+                        </div>
+                        <!--<div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>-->
+                        <button type="submit" class="btn btn-primary">Registrar Venta</button>
+                      </form>
+        </div>
 </template>
 
 <script>
@@ -37,7 +46,7 @@ export default {
                 )
                 .then((result) => {
                     let dataLogIn = {
-                        username: this.user.username,
+                        username: this.registro_ventas.idCliente,
                         token_access: result.data.access,
                         token_refresh: result.data.refresh,
                     }
@@ -58,108 +67,72 @@ export default {
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Montserrat&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    .body2{
-        /*background: red;*/
-        display: block;
-        justify-content: center;
-        align-items: center;
-        /*max-width: 55.9%;*/
-        /*width: 90%;
-        margin: auto;*/
-    }
-    /* ###################################################### */
-    /* ####################### Título ####################### */
-    /* ###################################################### */
-    .PTítulo{
-        position: relative;
-    }
-    .PTítulo h1{
-        width: 400px;
-        padding: 3%;
-        margin: auto;
-    }
-    /* ###################################################### */
-    /* ###################### Entradas ###################### */
-    /* ###################################################### */
-    .container1{
-    position: relative;
-    background-color: #4169E1;
-    width: 80%;
-    margin: auto;
-    padding: 3%;
-}
-.container2{
-    width: 70%;
-    padding: 0%;
-    margin: auto;
-}
-.container2 div{
-    display: inline-block;
-}
-.LI1{
-    width: 800px;
-    padding: 0%;
-    margin: auto;
-}
-.LI2{
-    width: 300px;
-    padding: 0%;
-    margin: auto;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.wrapper2 {
+  font-family:'Hind', sans-serif;
+  max-width: 700px;
+  border-radius: 10px;
+  margin: auto !important;
+  margin-top: 80px !important;
+  padding: 30px 40px;
+  border: 3px solid #05021f;
 }
 
-.LI1 div, .LI2 div{
-    display: inline-block;
+.input-field{
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #05021f;
+  font-size: 17px;
+  background: #F5F5F5;
+  border: 1px solid #05021f;
 }
 
+.input-field:hover {
+      color: #7E91C0;
+      font-size: 17px;
+      border: 1px solid #7E91C0	
+  }
 
-.pointerText{
-    position: relative;
-    /*background-color: red;*/
-    padding: 3%;
-    width: 200px;
-    height: 4%;
-    margin: 3%;
-}
-.inputBox{
-    position: relative;
-    /*background-color: green;*/
-    padding: 3%;
-    width: 200px;
-    height: 4%;
-    max-width: 20%;
-    margin: 3%;
-    /*border: 3px solid rgba(0, 0, 0, 0.9);*/
+  input {
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 0px 2px;
+    background: #F5F5F5;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif
 }
 
+.btn.btn-block {
+  width: auto;
+  margin-top: 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #05021f;
+  color: #fff;
+  font-size: 20px;
+}
 
-    /* ###################################################### */
-    /* ######################## tabla ####################### */
-    /* ###################################################### */
-
-    .Table{
-        max-width: 55.9%;
-        margin: auto;
-    }
-
-    /* ###################################################### */
-    /* ####################### Botones ###################### */
-    /* ###################################################### */
-
-    .Buttons div{
-        display: inline-block;
-    }
-    .Buttons{
-        max-width: 55.9%;
-        margin: auto;
-    }
-    .Buttons button{
-        background-color: #ADFF2F;
-        padding: 10px 20px;
-        border: 3px solid rgba(0, 0, 0, 0.9);
-        color: black;
-        font-weight: bold; 
-        font-size: 16px;
-    }
+  .btn.btn-block:hover {
+      background-color: #7E91C0;
+  }
+     
+.login{
+  color: #05021f;
+  text-align: center;
+  font-size: 45px !important;
+  font-family: 'Anton', sans-serif;
+}
 </style>
