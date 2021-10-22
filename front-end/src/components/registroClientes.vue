@@ -78,6 +78,7 @@ export default {
                 
                 this.$emit('completedCliente', addCliente);
                 alert("El producto fue registrado de manera exitosa");
+                console.log(result);
                 this.clearForm();
             }).catch((error) => {
                 console.log(error)

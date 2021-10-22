@@ -13,7 +13,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" >Productos</a>
+                <a class="nav-link" v-on:click="loadProducts">Productos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" v-if="is_auth" @click="loadCliente">Clientes</a>
@@ -115,6 +115,9 @@ export default {
     },
     loadCliente: function(){
       this.$router.push({name: "registroClientes"})
+    },
+    loadProducts: function() {
+      this.$router.push({ name: "readProducts" });
     },
   },
   created: function(){

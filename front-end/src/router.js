@@ -10,7 +10,8 @@ import readProductos from "./components/readProductos";
 import rudProducto from "./components/rudProducto";
 
 import RegistroClientes from './components/registroClientes'
- 
+
+import readSales from './components/readSales'
  
 const routes = [{
         path: '/',
@@ -41,24 +42,29 @@ const routes = [{
         path: "/user/producto/",
         name: "producto",
         component: Productos,
-      },
-    
-      {
+    },
+
+    {
         path: "/user/producto/",
         name: "readProducts",
         component: readProductos,
-      },
-    
-      {
+    },
+
+    {
         path: "/user/producto/detalle",
         name: "rudProducto",
         component: rudProducto,
-      },
-      {
+    },
+    {
         path: '/user/addClientes',
         name: "registroClientes",
         component: RegistroClientes
-    }
+    },
+    {
+        path: "/user/Ventas/",
+        name: "readSales",
+        component: readSales,
+    },
 ];
  
 const router = createRouter({
