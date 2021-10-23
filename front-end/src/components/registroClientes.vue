@@ -34,7 +34,7 @@
             </div>
             <div class="group">
                 <button type="submit" class="btn btn-enviar">Registrar cliente</button>
-                <a class="btn btn-lista" href="/user">Lista de clientes</a>
+                <a class="btn btn-lista" @click="listCliente">Lista de clientes</a>
             </div>
             
         </form>
@@ -60,37 +60,29 @@ export default {
         }
     },
     methods: {
-
         processCliente: function(){
             axios.post(
                 "https://computer-shop-mintic2022.herokuapp.com/cliente/",
-                this.cliente,
-                {headers: {}}
+                this.cliente
             ).then((result) => {
-                this.resetForm()
                 let addCliente = {
                         name: this.cliente.name,
-                        surname: this.cliente.name,
-                        phone: this.cliente.name,
-                        email: this.cliente.name,
-                        direccion: this.cliente.name,
+                        surname: this.cliente.surname,
+                        phone: this.cliente.phone,
+                        email: this.cliente.email,
+                        direccion: this.cliente.direccion,
                 };
-                
                 this.$emit('completedCliente', addCliente);
-                alert("El producto fue registrado de manera exitosa");
                 console.log(result);
-                this.clearForm();
+                alert("El producto fue registrado de manera exitosa");
+
             }).catch((error) => {
                 console.log(error)
                 alert("Error en el resgistro.");  
             });
         },
-        clearForm: function() {
-            this.name = ''
-            this.surname = ''
-            this.phone = ''
-            this.email = ''
-            this.direccion = ''
+        listCliente: function(){
+            this.$router.push({name: "listClientes"})
         }
     }
 }

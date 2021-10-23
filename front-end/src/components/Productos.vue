@@ -1,118 +1,38 @@
 <template>
   <div class="producto_user">
-    <div class="container_producto_user">
-      <h2>Producto</h2>
+    <div class="container_producto_user ">
+      <h1 class="text-center">Producto</h1>
       <form v-on:submit.prevent="AddingProducts">
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="col">
-            <input
-              type="number"
-              class="form-control"
-              v-model="producto.id"
-              placeholder="Id"
-            />
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.tipo"
-              placeholder="Tipo"
-            />
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.salidas"
-              placeholder="Salidas"
-            />
+        <div class="input-group">
+          <div class="col columna1">
+            <input type="number" class="col1" v-model="producto.id" placeholder="Id"/>
+            <input type="text" class="col1" v-model="producto.tipo" placeholder="Tipo"/>
+            <input type="text" class="col1" v-model="producto.salidas" placeholder="Salidas"/>
 
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.pantalla_resolucion"
-              placeholder="Resolucion de pantalla"
-            />
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.software_incluido"
-              placeholder="Software incluido"
-            />
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.capacidad_disco"
-              placeholder="Capacidad del disco (GB)"
-            />
+            <input type="text" class="col1" v-model="producto.pantalla_resolucion" placeholder="Resolucion de pantalla"/>
+            <input type="text" class="col1" v-model="producto.software_incluido" placeholder="Software incluido"/>
+            <input type="text" class="col1" v-model="producto.capacidad_disco" placeholder="Capacidad del disco (GB)"/>
           </div>
           <div class="col">
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.modelo"
-              placeholder="Modelo"
-            />
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.entradas"
-              placeholder="Entradas"
-            />
+            <input type="text" class="col2" v-model="producto.modelo" placeholder="Modelo"/>
+            <input type="text" class="col2" v-model="producto.entradas" placeholder="Entradas"/>
 
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.pantalla_tamaño"
-              placeholder="Tamaño pantalla"
-            />
+            <input type="text" class="col2" v-model="producto.pantalla_tamaño" placeholder="Tamaño pantalla"/>
 
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.bateria"
-              placeholder="Bateria"
-            />
+            <input type="text" class="col2" v-model="producto.bateria" placeholder="Bateria"/>
 
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.tipo_disco"
-              placeholder="Tipo de disco (GB)"
-            />
+            <input type="text" class="col2" v-model="producto.tipo_disco" placeholder="Tipo de disco (GB)"/>
 
-            <input
-              type="text"
-              class="form-control"
-              v-model="producto.memoria_ram"
-              placeholder="Memoria RAM (GB)"
-            />
+            <input type="text" class="col2" v-model="producto.memoria_ram" placeholder="Memoria RAM (GB)"/>
           </div>
         </div>
 
-        <input
-          type="text"
-          class="form-control"
-          v-model="producto.procesador"
-          placeholder="Procesador"
-        />
-        <input
-          type="number"
-          class="form-control"
-          v-model="producto.precio"
-          placeholder="Precio en USD$"
-        />
-        <button
-          class="btn-lg btn-block"
-          v-on:click="AddingProducts"
-          type="button"
-        >
-          Agregar producto
-        </button>
-        <button
-          class="btn-lg btn-block"
-          v-on:click="loadProducts"
-          type="button"
-        >
-          Ver todos los productos
-        </button>
+        <input type="text" class="fuera" v-model="producto.procesador" placeholder="Procesador"/>
+        <input type="number" class="fuera" v-model="producto.precio" placeholder="Precio en USD$"/>
+        
+        <button class="btn btn-block text-center" v-on:click="AddingProducts" type="button">Agregar producto</button>
+        
+        <button class="btn btn-block text-center" v-on:click="loadProducts" type="button">Ver todos los productos</button>
       </form>
     </div>
   </div>
@@ -208,10 +128,15 @@ export default {
 
 <style>
 .producto_user {
-  margin: 0;
+  font-family:'Hind', sans-serif;
+  max-width: 700px;
+  border-radius: 10px;
+  margin: auto;
+  padding: 30px 40px;
+  border: 3px solid #05021f;
   padding: 0%;
   height: 100%;
-  width: 100%;
+  width: auto;
   margin-top: 70px !important;
   display: flex;
   justify-content: center;
@@ -219,52 +144,33 @@ export default {
 }
 
 .container_producto_user {
-  border: 3px solid #283747;
-  border-radius: 10px;
-  width: 45%;
-  height: 90%;
-
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.producto_user h2 {
-  color: #283747;
+.input-group{
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-.producto_user form {
-  width: 90%;
-}
-
-.producto_user input {
-  height: 25px;
-  width: 100%;
-
-  box-sizing: border-box;
-  padding: 10px 20px;
-  margin: 5px 0;
-
-  border: 1px solid #283747;
-}
-
-.producto_user button {
-  width: 100%;
-  height: 45px;
-
-  color: #e5e7e9;
-  background: #283747;
-  border: 1px solid #e5e7e9;
-
+.col1, .col2, .fuera{
   border-radius: 5px;
-  padding: 10px 25px;
-  margin: 5px 0 25px 0;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #05021f;
+  font-size: 17px;
+  background: #F5F5F5;
+  border: 1px solid #05021f;
+}
+.columna1{
+  margin-right: 20px !important;
 }
 
-.producto_user button:hover {
-  color: #e5e7e9;
-  background: crimson;
-  border: 2px solid #283747;
-}
 </style>

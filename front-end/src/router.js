@@ -8,7 +8,7 @@ import RegistroVentas from './components/RegistroVentas.vue'
 import Productos from "./components/Productos.vue";
 import readProductos from "./components/readProductos";
 import rudProducto from "./components/rudProducto";
-
+import listaClientes from './components/listClientes';
 import RegistroClientes from './components/registroClientes'
 
 import readSales from './components/readSales'
@@ -65,6 +65,11 @@ const routes = [{
         name: "readSales",
         component: readSales,
     },
+    {
+        path: '/user/listClientes',
+        name: "listClientes",
+        component: listaClientes
+    }
 ];
  
 const router = createRouter({

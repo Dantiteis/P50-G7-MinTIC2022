@@ -13,9 +13,6 @@
                 <a class="nav-link active" aria-current="page" v-if="is_auth"  v-on:click="loadHome">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" v-on:click="loadProducts">Productos</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" v-if="is_auth" @click="loadCliente">Clientes</a>
               </li>
               <li class="nav-item">
