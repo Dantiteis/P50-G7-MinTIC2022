@@ -10,7 +10,7 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">  
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active" aria-current="page" v-if="is_auth"  v-on:click="loadHome">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" v-on:click="loadProducts">Productos</a>

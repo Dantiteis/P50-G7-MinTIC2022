@@ -33,7 +33,7 @@
                 <input type="number" v-model="user.account.balance" placeholder="Initial Balance">
             </div>
         </div>
-        <button type="submit" class="btn btn-block text-center">Registrarse</button>
+        <button type="button" v-on:click="processSignUp" class="btn btn-block text-center">Registrarse</button>
     </form>
 </div>
 </template>
@@ -78,12 +78,13 @@ export default {
                     }
                     
                     this.$emit('completedSignUp', dataSignUp)
+                    alert("El producto fue registrado de manera exitosa");
+
+                    console.log(sales);
                 })
                 .catch((error) => {
                     console.log(error)
-                    alert("Erroe en el resgistro.");
-                    
-                    
+                    alert("Error en el resgistro.");  
                 });
         }
     }

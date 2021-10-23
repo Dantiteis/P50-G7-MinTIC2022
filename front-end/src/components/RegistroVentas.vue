@@ -19,8 +19,8 @@
           <label for="dateInput">fecha</label>
           <input type="text" class="form-control" id="dateInput" v-model="registroVenta.date" placeholder="ingrese el Producto" required>
       </div>
-      <button type="submit" class="btn btn-block text-center" v-on:click="AddingSale">Registrar Venta</button>
-       <button type="submit" class="btn btn-block text-center" v-on:click="loadSales">Ver todas las ventas</button>
+      <button type="button" class="btn btn-block text-center" v-on:click="AddingSale">Registrar Venta</button>
+       <button type="button" class="btn btn-block text-center" v-on:click="loadSales">Ver todas las ventas</button>
     </form>
   </div>
 </template>
