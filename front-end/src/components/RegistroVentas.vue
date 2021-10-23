@@ -3,13 +3,13 @@
     <h1 class="login text-center">Registro de Venta</h1>
     <form v-on:submit.prevent="AddingSale">
       <div class="form-group">
-        <label for="clienteName">Nombre del cliente</label>
-        <input type="text" class="form-control" id="clienteName" v-model="registroVenta.idCliente" placeholder="ingrese el id del cliente" required>
+        <label for="clienteName">ID del cliente</label>
+        <input type="number" class="form-control" id="clienteName" v-model="registroVenta.idCliente" placeholder="ingrese el id del cliente" required>
         <!--<small id="emailHelp" class="form-text text-muted">nombre sin rellenar</small>-->
       </div>
       <div class="form-group">
-        <label for="productName">Nombre del producto</label>
-        <input type="text" class="form-control" id="productName" v-model="registroVenta.idProducto" placeholder="ingrese el id del producto" required>
+        <label for="productName">ID del producto</label>
+        <input type="number" class="form-control" id="productName" v-model="registroVenta.idProducto" placeholder="ingrese el id del producto" required>
       </div>
       <div class="form-group">
           <label for="amount">Cantidad</label>
@@ -17,7 +17,7 @@
       </div>
       <div class="form-group">
           <label for="dateInput">fecha</label>
-          <input type="date" class="form-control" id="dateInput" v-model="registroVenta.date" placeholder="ingrese el Producto" required>
+          <input type="text" class="form-control" id="dateInput" v-model="registroVenta.date" placeholder="ingrese el Producto" required>
       </div>
       <button type="submit" class="btn btn-block text-center" v-on:click="AddingSale">Registrar Venta</button>
        <button type="submit" class="btn btn-block text-center" v-on:click="loadSales">Ver todas las ventas</button>
