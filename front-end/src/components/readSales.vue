@@ -1,15 +1,10 @@
 <template>
-<div>
-  <b-table
-    :sort-by="sortBy"
-    :sort-desc="sortDesc"
-    sort-icon-left
-    responsive="sm"
-    class="table table-striped table-hover"
-  >
-    <thead class="thead-dark">
+<div class="wrapper3 container">
+  <table   class="table text-center table-bordered caption-top table-hover">
+    <thead class="thead-inverse">
       <tr>
         <!-- <th sortable:true scope="col">Id</th>-->
+        <th>ID</th>
         <th scope="col">idCliente</th>
         <th scope="col">idProducto</th>
         <th scope="col">cantidad</th>
@@ -17,15 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(p, index) in Ventas" :key="index">
+      <tr v-for="(venta, index) in Ventas" :key="index">
         <!-- <td>{{ p.id }}</td>-->
-        <td>{{ p.idCliente }}</td>
-        <td>{{ p.idProducto }}</td>
-        <td>{{ p.cantidad }}</td>
-        <td>{{ p.fecha_venta }}</td>
+        <th scope="row">{{venta.id}}</th>
+        <td>{{ venta.idCliente }}</td>
+        <td>{{ venta.idProducto }}</td>
+        <td>{{ venta.cantidad }}</td>
+        <td>{{ venta.fecha_venta }}</td>
       </tr>
     </tbody>
-  </b-table>
+  </table>
   <div class="Ventas">
     <button
       class="btn btn-success btn-lg btn-block"
@@ -42,12 +38,13 @@
 import axios from "axios";
 
 export default {
-  name: "readSales",
+  name: "readVentas",
 
   data: function() {
     return {
       Ventas: [
         {
+            id: "",
             idCliente: "",
             idProducto: "",
             cantidad: "",
@@ -84,6 +81,40 @@ export default {
 </script>
 
 <style>
+.wrapper3 {
+  align-items: center !important;
+  justify-content: center;
+  margin-top: 35px !important;
+  font-family:'Hind', sans-serif;
+  max-width: auto !important;
+  margin-bottom: 25px !important;
+  margin: auto;
+  padding: 30px 40px;
+}
+
+.table {
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #586da1!important;
+  font-size: 15px !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.table thead th {
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #586da1!important;
+  color: #05021f;
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.table td, th {
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #586da1!important;
+}
+
 .Ventas {
   margin: 0;
   padding: 0%;

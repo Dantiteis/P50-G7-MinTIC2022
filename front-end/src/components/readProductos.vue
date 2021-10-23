@@ -1,15 +1,8 @@
 <template>
-<div>
-  <b-table
-    :sort-by="sortBy"
-    :sort-desc="sortDesc"
-    sort-icon-left
-    responsive="sm"
-    class="table table-striped table-hover"
-  >
+<div class="wrapper3 container">
+  <table   class="table text-center table-bordered caption-top table-hover">
     <thead class="thead-dark">
       <tr>
-        <!-- <th sortable:true scope="col">Id</th>-->
         <th scope="col">Modelo</th>
         <th scope="col">Tipo</th>
         <th scope="col">Entradas</th>
@@ -28,7 +21,7 @@
     <tbody>
       <tr v-for="(p, index) in producto" :key="index">
         <!-- <td>{{ p.id }}</td>-->
-        <td>{{ p.modelo }}</td>
+        <td scope="row">{{ p.modelo }}</td>
         <td>{{ p.tipo }}</td>
         <td>{{ p.entradas }}</td>
         <td>{{ p.salidas }}</td>
@@ -43,7 +36,7 @@
         <td>{{ p.precio }}</td>
       </tr>
     </tbody>
-  </b-table>
+  </table>
   <div class="producto">
     <button
       class="btn btn-success btn-lg btn-block"
