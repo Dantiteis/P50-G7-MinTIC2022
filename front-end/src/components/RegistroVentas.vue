@@ -22,7 +22,7 @@
         <div class="form-group">
           <label for="fecha">Fecha de compra</label>
           <div class="input-field"> 
-            <input type="date" v-model="registroVenta.date" id="fecha" required>
+            <input type="date" v-model="registroVenta.fecha_venta" id="fecha" required>
           </div>
         </div>
             <button type="button" class="btn btn-block text-center" v-on:click="AddingSale">Registrar Venta</button>
