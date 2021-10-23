@@ -10,8 +10,9 @@ import readProductos from "./components/readProductos";
 import rudProducto from "./components/rudProducto";
 import listaClientes from './components/listClientes';
 import RegistroClientes from './components/registroClientes'
-
+import Proveedores from './components/Proveedores.vue'
 import readSales from './components/readSales'
+import Account from './components/Account.vue'
  
 const routes = [{
         path: '/',
@@ -69,7 +70,17 @@ const routes = [{
         path: '/user/listClientes',
         name: "listClientes",
         component: listaClientes
-    }
+    },
+    {
+        path: '/user/account',
+        name: "account",
+        component: Account
+    },
+    {
+        path:'/user/Proveedor' ,
+        name: "Proveedor",
+        component: Proveedores
+    },
 ];
  
 const router = createRouter({

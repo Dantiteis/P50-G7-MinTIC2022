@@ -19,7 +19,7 @@
                 <a class="nav-link" v-on:click="Product">Agregar productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Proveedores</a>
+                <a class="nav-link" v-on:click="loadProveedor"> Proveedores</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" v-on:click="loadRV">Registro de Ventas</a>
@@ -35,6 +35,9 @@
               <li class="nav-item">
                 <a class="nav-link" v-if="is_auth" @click="logOut">Cerrar Sesión</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" v-if="is_auth" v-on:click="loadAccount"> Cuenta </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -45,6 +48,7 @@
       <router-view  
         v-on:completedLogIn="completedLogIn"
         v-on:completedSignUp="completedSignUp"
+        v-on:logOut="logOut"
       >
       </router-view>
     </div>
@@ -115,6 +119,12 @@ export default {
     },
     loadProducts: function() {
       this.$router.push({ name: "readProducts" });
+    },
+    loadAccount: function () {
+      this.$router.push({ name: "account" });
+    },
+    loadProveedor: function() {
+      this.$router.push({ name: "Proveedor" });
     },
   },
   created: function(){

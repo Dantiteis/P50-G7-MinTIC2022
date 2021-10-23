@@ -2,34 +2,34 @@
   <div class="wrapper4">
     <h1 class="text-center">Registro de Venta</h1>
     <div class="form-group">
-          <div class="input-field"> 
-            <span class="fas fa-id-card-alt fa-sm p-2"></span> 
-            <input type="text" v-model="registroVenta.idCliente" placeholder="Id del cliente" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-field"> 
-            <span class="fas fa-shopping-cart fa-sm p-2"></span> 
-            <input type="text" v-model="registroVenta.idProducto" placeholder="Id del producto" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-field"> 
-            <span class="fa fa-hashtag fa-sm p-2"></span> 
-            <input type="number" v-model="registroVenta.cantidad"  placeholder="Cantidad de unidades">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="fecha">Fecha de compra</label>
-          <div class="input-field"> 
-            <input type="date" v-model="registroVenta.date" id="fecha" required>
-          </div>
-        </div>
+      <div class="input-field"> 
+        <span class="fas fa-id-card-alt fa-sm p-2"></span> 
+        <input type="text" v-model="registroVenta.idCliente" placeholder="Id del cliente" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-field"> 
+        <span class="fas fa-shopping-cart fa-sm p-2"></span> 
+        <input type="text" v-model="registroVenta.idProducto" placeholder="Id del producto" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-field"> 
+        <span class="fa fa-hashtag fa-sm p-2"></span> 
+        <input type="number" v-model="registroVenta.cantidad"  placeholder="Cantidad de unidades">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fecha">Fecha de compra</label>
+      <div class="input-field"> 
+        <input type="date" v-model="registroVenta.date" id="fecha" required>
+      </div>
+    </div>
 
-        <div class="group2">
-          <button type="button" class="btn btn-enviar text-center" v-on:click="AddingSale">Registrar Venta</button>
-       <button type="button" class="btn btn-enviar text-center" v-on:click="loadSales">Ver todas las ventas</button>
-        </div>
+    <div class="group2">
+      <button type="button" class="btn btn-enviar text-center" v-on:click="AddingSale">Registrar Venta</button>
+      <button type="button" class="btn btn-enviar text-center" v-on:click="loadSales">Ver todas las ventas</button>
+    </div>
   </div>
 </template>
 
