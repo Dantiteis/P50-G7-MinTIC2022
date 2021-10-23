@@ -29,10 +29,13 @@
 
         <input type="text" class="fuera" v-model="producto.procesador" placeholder="Procesador"/>
         <input type="number" class="fuera" v-model="producto.precio" placeholder="Precio en USD$"/>
+
+        <div class="group1">
+          <button class="btn btn-enviar text-center" v-on:click="AddingProducts" type="button">Agregar producto</button>
+          <button class="btn btn-enviar text-center" v-on:click="loadProducts" type="button">Ver todos los productos</button>
+        </div>
         
-        <button class="btn btn-block text-center" v-on:click="AddingProducts" type="button">Agregar producto</button>
         
-        <button class="btn btn-block text-center" v-on:click="loadProducts" type="button">Ver todos los productos</button>
       </form>
     </div>
   </div>
@@ -127,6 +130,7 @@ export default {
 </script>
 
 <style>
+
 .producto_user {
   font-family:'Hind', sans-serif;
   max-width: 700px;
@@ -135,7 +139,7 @@ export default {
   padding: 30px 40px;
   border: 3px solid #05021f;
   padding: 0%;
-  height: 100%;
+  height: auto !important;
   width: auto;
   margin-top: 70px !important;
   display: flex;
@@ -144,7 +148,7 @@ export default {
 }
 
 .container_producto_user {
-  width: auto;
+  width: 100% !important;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -153,13 +157,16 @@ export default {
 }
 
 .input-group{
+  width: 100% !important;
   margin-left: 50%;
   transform: translateX(-50%);
 }
 
 .col1, .col2, .fuera{
+  width: 100%;
   border-radius: 5px;
-  padding: 8px;
+  padding: 8px 10px;
+  height: 35px !important;
   display: flex;
   align-items: center;
   cursor: pointer;

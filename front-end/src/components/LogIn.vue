@@ -65,10 +65,6 @@ export default {
 </script>
 
 
-
-
-
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
@@ -104,14 +100,13 @@ export default {
   }
 
   input {
-
     border: none;
     outline: none;
     box-shadow: none;
     width: 100%;
     padding: 0px 2px;
     background: #F5F5F5;
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'Poppins', sans-serif
 }
 

@@ -1,9 +1,9 @@
 <template>
 <div class="wrapper3 container">
   <table   class="table text-center table-bordered caption-top table-hover">
+    <caption><h1>Registro Ventas</h1></caption>
     <thead class="thead-inverse">
       <tr>
-        <!-- <th sortable:true scope="col">Id</th>-->
         <th>ID</th>
         <th scope="col">idCliente</th>
         <th scope="col">idProducto</th>
@@ -13,7 +13,6 @@
     </thead>
     <tbody>
       <tr v-for="(venta, index) in Ventas" :key="index">
-        <!-- <td>{{ p.id }}</td>-->
         <th scope="row">{{venta.id}}</th>
         <td>{{ venta.idCliente }}</td>
         <td>{{ venta.idProducto }}</td>
@@ -22,15 +21,6 @@
       </tr>
     </tbody>
   </table>
-  <div class="Ventas">
-    <button
-      class="btn btn-success btn-lg btn-block"
-      v-on:click="readingSales"
-      type="button"
-    >
-      Mostrar Ventas
-    </button>
-  </div>
   </div>
 </template>
 
@@ -42,16 +32,15 @@ export default {
 
   data: function() {
     return {
-      Ventas: [
-        {
-            id: "",
-            idCliente: "",
-            idProducto: "",
-            cantidad: "",
-            fecha_venta: "",
-        },
-      ],
-    };
+      Ventas: [],
+    }
+  },
+
+  created () {
+      axios.get(`https://computer-shop-mintic2022.herokuapp.com/registro_ventas/`)
+      .then((sales) => {
+          this.Ventas = sales.data;
+      })
   },
 
   methods: {

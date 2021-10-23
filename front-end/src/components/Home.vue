@@ -36,7 +36,7 @@ export default {
 
     .greetings h1{
         font-size: 50px;
-        color: #092327; /* color: 283747 reemplazado*/
+        
     }
 
     .greetings span{

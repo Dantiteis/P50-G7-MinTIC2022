@@ -98,7 +98,7 @@ export default {
   max-width: 700px;
   margin: auto !important;
   margin-bottom: 20px !important;
-  margin-top: 40px !important;
+  margin-top: 50px !important;
   padding: 30px 40px;
 }
 
