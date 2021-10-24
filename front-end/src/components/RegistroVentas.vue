@@ -46,7 +46,7 @@ export default {
         cantidad: "",
         fecha_venta: "",
       },
-    };
+    }
   },
   methods: {
     AddingSale: function() {

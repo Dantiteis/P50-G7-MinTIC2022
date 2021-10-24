@@ -27,12 +27,7 @@
                 <input type="email" v-model="user.email" placeholder="Email" required>
             </div>
         </div>
-        <div class="form-group">
-            <div class="input-field"> 
-                <span class="fas fa-balance-scale p-2"></span> 
-                <input type="number" v-model="user.account.balance" placeholder="Initial Balance">
-            </div>
-        </div>
+        
         <button type="button" v-on:click="processSignUp" class="btn btn-block text-center">Registrarse</button>
     </form>
 </div>

@@ -24,6 +24,10 @@
               <li class="nav-item">
                 <a class="nav-link" v-on:click="loadRV">Registro de Ventas</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" v-on:click="Comenta">Comentarios</a>
+              
+              </li>
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -125,6 +129,9 @@ export default {
     },
     loadProveedor: function() {
       this.$router.push({ name: "Proveedor" });
+    },
+    Comenta: function() {
+      this.$router.push({ name: "comentarios" });
     },
   },
   created: function(){
